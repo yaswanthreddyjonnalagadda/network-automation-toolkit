@@ -1,0 +1,56 @@
+================================================================================
+OSPF NEIGHBOR VERIFICATION - Contoso Logistics
+Generated: 2024-03-15 09:25:04
+Network Automation Toolkit v1.0
+================================================================================
+
+Device: RTR-01 (192.168.100.1)
+--------------------------------------------------------------------------------
+Command: show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           1   FULL/BDR        00:00:38    10.0.1.2        GigabitEthernet0/1
+
+[2024-03-15 09:25:04] INFO  - RTR-01: Neighbor 2.2.2.2 via GigabitEthernet0/1 - State: FULL/BDR - OK
+
+--------------------------------------------------------------------------------
+Device: RTR-02 (192.168.100.2)
+--------------------------------------------------------------------------------
+Command: show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/DR         00:00:31    10.0.1.1        GigabitEthernet0/0
+
+[2024-03-15 09:25:06] INFO  - RTR-02: Neighbor 1.1.1.1 via GigabitEthernet0/0 - State: FULL/DR - OK
+
+--------------------------------------------------------------------------------
+Device: SW-01 (192.168.100.11)
+--------------------------------------------------------------------------------
+Command: show ip ospf neighbor
+
+[2024-03-15 09:25:08] INFO  - SW-01: No OSPF neighbors (expected - this is an access switch)
+
+--------------------------------------------------------------------------------
+Device: SW-02 (192.168.100.12)
+--------------------------------------------------------------------------------
+Command: show ip ospf neighbor
+
+[2024-03-15 09:25:10] INFO  - SW-02: No OSPF neighbors (expected - this is an access switch)
+
+================================================================================
+OSPF NEIGHBOR SUMMARY
+================================================================================
+  RTR-01: 1 neighbor(s) - ALL FULL
+  RTR-02: 1 neighbor(s) - ALL FULL
+  SW-01:  No OSPF neighbors (expected for access switch)
+  SW-02:  No OSPF neighbors (expected for access switch)
+--------------------------------------------------------------------------------
+OSPF health check PASSED - All adjacencies in FULL state
+================================================================================
+
+--- SAMPLE FAILED OUTPUT (for reference) ---
+
+[2024-03-15 10:05:22] WARNING - RTR-02: No OSPF neighbors found - OSPF may be down
+[2024-03-15 10:05:22] WARNING - RTR-02: ISSUE: No OSPF neighbors found - OSPF may not be configured or all neighbors are down
+OSPF issues detected: 1 - Investigate immediately
+See docs/troubleshooting-guide.md for common OSPF issues
