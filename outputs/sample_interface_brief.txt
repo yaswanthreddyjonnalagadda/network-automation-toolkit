@@ -1,0 +1,76 @@
+================================================================================
+INTERFACE STATUS CHECK - Contoso Logistics
+Generated: 2024-03-15 09:30:15
+Network Automation Toolkit v1.0
+================================================================================
+
+Device: RTR-01 (192.168.100.1)
+--------------------------------------------------------------------------------
+Command: show ip interface brief
+
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     10.0.0.1        YES NVRAM  up                    up
+GigabitEthernet0/1     10.0.1.1        YES NVRAM  up                    up
+GigabitEthernet0/2     10.10.10.1      YES NVRAM  up                    up
+GigabitEthernet0/3     192.168.100.1   YES NVRAM  up                    up
+Loopback0              1.1.1.1         YES NVRAM  up                    up
+
+[2024-03-15 09:30:15] INFO  - [RTR-01] GigabitEthernet0/0 - UP/UP (10.0.0.1)
+[2024-03-15 09:30:15] INFO  - [RTR-01] GigabitEthernet0/1 - UP/UP (10.0.1.1)
+[2024-03-15 09:30:15] INFO  - [RTR-01] GigabitEthernet0/2 - UP/UP (10.10.10.1)
+[2024-03-15 09:30:15] INFO  - [RTR-01] GigabitEthernet0/3 - UP/UP (192.168.100.1)
+[2024-03-15 09:30:15] INFO  - [RTR-01] Loopback0 - UP/UP (1.1.1.1)
+
+Device: RTR-02 (192.168.100.2)
+--------------------------------------------------------------------------------
+Command: show ip interface brief
+
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet0/0     10.0.1.2        YES NVRAM  up                    up
+GigabitEthernet0/1     10.10.20.1      YES NVRAM  up                    up
+GigabitEthernet0/2     192.168.100.2   YES NVRAM  up                    up
+Loopback0              2.2.2.2         YES NVRAM  up                    up
+
+[2024-03-15 09:30:17] INFO  - [RTR-02] GigabitEthernet0/0 - UP/UP (10.0.1.2)
+[2024-03-15 09:30:17] INFO  - [RTR-02] GigabitEthernet0/1 - UP/UP (10.10.20.1)
+[2024-03-15 09:30:17] INFO  - [RTR-02] GigabitEthernet0/2 - UP/UP (192.168.100.2)
+[2024-03-15 09:30:17] INFO  - [RTR-02] Loopback0 - UP/UP (2.2.2.2)
+
+Device: SW-01 (192.168.100.11)
+--------------------------------------------------------------------------------
+Command: show ip interface brief
+
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1/0/1   unassigned      YES unset  up                    up
+GigabitEthernet1/0/2   unassigned      YES unset  up                    up
+GigabitEthernet1/0/3   unassigned      YES unset  down                  down
+GigabitEthernet1/0/48  unassigned      YES unset  up                    up
+Vlan30                 192.168.100.11  YES NVRAM  up                    up
+
+[2024-03-15 09:30:19] WARNING - [SW-01] ISSUE: GigabitEthernet1/0/3 is DOWN (status=down, protocol=down)
+[2024-03-15 09:30:19] INFO    - [SW-01] GigabitEthernet1/0/48 - UP/UP (unassigned)
+[2024-03-15 09:30:19] INFO    - [SW-01] Vlan30 - UP/UP (192.168.100.11)
+
+Device: SW-02 (192.168.100.12)
+--------------------------------------------------------------------------------
+Command: show ip interface brief
+
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1/0/1   unassigned      YES unset  up                    up
+GigabitEthernet1/0/48  unassigned      YES unset  up                    up
+Vlan30                 192.168.100.12  YES NVRAM  up                    up
+
+[2024-03-15 09:30:21] INFO  - [SW-02] All interfaces nominal
+
+================================================================================
+INTERFACE CHECK SUMMARY
+================================================================================
+  RTR-01: All interfaces OK
+  RTR-02: All interfaces OK
+  SW-01:  1 issue(s) found
+    - GigabitEthernet1/0/3 is DOWN (status=down, protocol=down)
+  SW-02:  All interfaces OK
+--------------------------------------------------------------------------------
+Total issues found: 1 - Review warnings above
+Note: Gi1/0/3 on SW-01 - physical cable may be unplugged (no device connected to port)
+================================================================================
