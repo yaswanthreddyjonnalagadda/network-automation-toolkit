@@ -1,0 +1,68 @@
+# Network Automation Toolkit - .gitignore
+
+# ===== SECURITY: Never commit these files =====
+devices.yml
+devices.yaml
+*.yml.bak
+credentials.ini
+secrets.cfg
+.env
+.env.*
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ===== Virtual environments =====
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# ===== Output files with potentially sensitive data =====
+outputs/*.txt
+outputs/*.log
+outputs/*.json
+!outputs/sample_*.txt
+
+# ===== Backup configs (may contain sensitive info) =====
+configs/backup_*/
+configs/*.bak
+
+# ===== IDE and editor files =====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ===== Logs =====
+*.log
+logs/
+
+# ===== Test artifacts =====
+.pytest_cache/
+.coverage
+htmlcov/
