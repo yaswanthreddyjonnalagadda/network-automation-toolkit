@@ -1,0 +1,41 @@
+2024-03-15 09:22:00 [INFO] ============================================================
+2024-03-15 09:22:00 [INFO] Network Automation Toolkit - Configuration Backup
+2024-03-15 09:22:00 [INFO] ============================================================
+2024-03-15 09:22:00 [INFO] Loaded 4 device(s) from devices.yml
+2024-03-15 09:22:00 [INFO] Backup directory: configs/backups/20240315_092200
+2024-03-15 09:22:00 [INFO] ============================================================
+2024-03-15 09:22:00 [INFO] Connecting to RTR-01 (192.168.100.1)...
+2024-03-15 09:22:02 [INFO]   [RTR-01] Connected successfully
+2024-03-15 09:22:04 [INFO]   [RTR-01] Backup saved: configs/backups/20240315_092200/RTR-01.cfg (8431 bytes)
+2024-03-15 09:22:04 [INFO] Connecting to RTR-02 (192.168.100.2)...
+2024-03-15 09:22:06 [INFO]   [RTR-02] Connected successfully
+2024-03-15 09:22:08 [INFO]   [RTR-02] Backup saved: configs/backups/20240315_092200/RTR-02.cfg (7892 bytes)
+2024-03-15 09:22:08 [INFO] Connecting to SW-01 (192.168.100.11)...
+2024-03-15 09:22:10 [INFO]   [SW-01] Connected successfully
+2024-03-15 09:22:13 [INFO]   [SW-01] Backup saved: configs/backups/20240315_092200/SW-01.cfg (12044 bytes)
+2024-03-15 09:22:13 [INFO] Connecting to SW-02 (192.168.100.12)...
+2024-03-15 09:22:15 [INFO]   [SW-02] Connected successfully
+2024-03-15 09:22:17 [INFO]   [SW-02] Backup saved: configs/backups/20240315_092200/SW-02.cfg (11987 bytes)
+2024-03-15 09:22:17 [INFO] ============================================================
+2024-03-15 09:22:17 [INFO] Backup complete: 4 succeeded, 0 failed
+2024-03-15 09:22:17 [INFO]   Successful: RTR-01, RTR-02, SW-01, SW-02
+2024-03-15 09:22:17 [INFO] Backup files stored in: configs/backups/20240315_092200
+2024-03-15 09:22:17 [INFO] ============================================================
+
+--- SAMPLE FAILED RUN (for reference) ---
+
+2024-03-15 10:15:00 [INFO] Connecting to RTR-01 (192.168.100.1)...
+2024-03-15 10:15:30 [ERROR]   [RTR-01] TIMEOUT - Device unreachable or SSH blocked
+2024-03-15 10:15:30 [INFO] Connecting to RTR-02 (192.168.100.2)...
+2024-03-15 10:15:32 [INFO]   [RTR-02] Connected successfully
+2024-03-15 10:15:34 [INFO]   [RTR-02] Backup saved: configs/backups/20240315_101500/RTR-02.cfg (7892 bytes)
+2024-03-15 10:15:34 [INFO] Connecting to SW-01 (192.168.100.11)...
+2024-03-15 10:15:35 [ERROR]   [SW-01] AUTH FAILED - Check username/password/enable secret
+2024-03-15 10:15:35 [INFO] Connecting to SW-02 (192.168.100.12)...
+2024-03-15 10:15:37 [INFO]   [SW-02] Connected successfully
+2024-03-15 10:15:39 [INFO]   [SW-02] Backup saved: configs/backups/20240315_101500/SW-02.cfg (11987 bytes)
+2024-03-15 10:15:39 [INFO] ============================================================
+2024-03-15 10:15:39 [INFO] Backup complete: 2 succeeded, 2 failed
+2024-03-15 10:15:39 [INFO]   Successful: RTR-02, SW-02
+2024-03-15 10:15:39 [WARNING]   Failed:     RTR-01, SW-01
+2024-03-15 10:15:39 [WARNING]   Review the above errors and check device connectivity/credentials.
