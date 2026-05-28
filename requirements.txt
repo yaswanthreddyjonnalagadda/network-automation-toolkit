@@ -1,0 +1,31 @@
+# Network Automation Toolkit - Python Dependencies
+# Generated for Python 3.9+
+
+# Core SSH/Networking
+netmiko==4.3.0           # High-level SSH automation for network devices
+paramiko==3.4.0          # Low-level SSH library (required by netmiko)
+
+# YAML parsing for device inventory files
+PyYAML==6.0.1
+
+# Data manipulation and reporting
+tabulate==0.9.0          # Pretty-print tabular data in terminal output
+colorama==0.4.6          # Cross-platform terminal color support
+
+# Utilities
+python-dateutil==2.8.2   # Date/time parsing utilities
+tqdm==4.66.1             # Progress bars for batch operations
+
+# Optional: Testing
+pytest==7.4.3            # Unit testing framework
+pytest-mock==3.12.0      # Mocking support for tests
+
+# Optional: Scheduled execution
+APScheduler==3.10.4      # In-process task scheduling
+
+# Optional: Email alerting
+# smtplib is built into Python standard library - no install needed
+
+# Development / Linting
+flake8==6.1.0            # Python linting
+black==23.11.0           # Code formatter
